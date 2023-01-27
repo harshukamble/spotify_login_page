@@ -1,0 +1,245 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Signika+Negative&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
+    <title>spotify</title>
+    <style>
+        
+        body {
+
+            justify-content: center;
+            align-items: center;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(./img/back.jpg);
+            min-height: 100vh;
+            display: flex;
+        }
+
+        .box {
+            background: black;
+            border-radius: 8px;
+            height:95%;
+            width: 500px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .box::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            height: 450px;
+            width: 350px;
+            background: linear-gradient(0deg, transparent, #00c43e,  #00c43e);
+            transform-origin: bottom right;
+            animation: animate 6s linear infinite;
+            animation-delay: -3s;
+        }
+
+        .box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            height: 450px;
+            width: 350px;
+            background: linear-gradient(0deg, transparent,  #00c43e,  #00c43e);
+            transform-origin: bottom right;
+            animation: animate 6s linear infinite;
+
+        }
+
+        @keyframes animate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+
+           
+        }
+
+        .form {
+            position: absolute;
+            display: flex;
+
+            flex-direction: column;
+            z-index: 10;
+            background: #090909;
+            inset: 2px;
+            padding: 50px 40px;
+            border-radius: 8px;
+        }
+
+        .form h2 {
+            text-align: center;
+            color:  #00c43e;
+            letter-spacing: 0;
+            font-weight: 600;
+            margin-top: 35px;
+        }
+
+        .box2 {
+            position: relative;
+            width: 300px;
+            margin-top: 35px;
+        }
+
+        .box2 input {
+            position: relative;
+            width: 100%;
+            background: transparent;
+            outline: none;
+            border: none;
+            padding: 20px 10px 10px;
+            color: black;
+            letter-spacing: 0.05em;
+            z-index: 10;
+        }
+
+        .box2 span {
+            position: absolute;
+            color: rgb(174, 173, 173);
+            font-size: 1em;
+            padding: 20px 10px 10px;
+            pointer-events: none;
+            transition: 0.5s;
+            left: 0;
+        }
+
+        .box2 input:valid~span,
+        .box2 input:focus~span {
+            color:  #00c43e;
+            transform: translateX(-10px) translateY(-34px);
+            font-size: 0.80em;
+        }
+
+        .box2 i {
+            left: 0;
+            bottom: 0;
+            height: 2px;
+            width: 140%;
+            background:  #00c43e;
+            border-radius: 4px;
+            transition: 0.5s;
+            pointer-events: none;
+            position: absolute;
+        }
+
+        .box2 input:valid~i,
+        .box2 input:focus~i {
+            height: 44px;
+        }
+
+        .links {
+            justify-content: space-between;
+            display: flex;
+        }
+
+        .links a {
+            margin: 10px 0;
+            font-size: 0.75em;
+            color: #8f8f8f;
+            text-decoration: none;
+        }
+
+        .links a:hover,
+        .links a:nth-child(2) {
+            color:  #00c43e;
+        }
+
+        input[type="submit"] {
+            border: none;
+            outline: none;
+            background: #00c43e;
+            padding: 11px 18px;
+            width: 100%;
+            margin-top: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 15px;
+            position: relative;
+        }
+
+        input[type="submit"]:hover {
+            opacity: 0.8;
+            background: transparent;
+            color: whitesmoke;
+            border: solid whitesmoke;
+            transition: 0.3s;
+        }
+
+        .form img {
+            position: relative;
+            height: 3rem;
+            width: 3rem;
+            left: 6rem;
+            top: 5rem;
+        }
+
+        .top1 {
+            position: relative;
+            top: -5rem;
+        }
+
+        .top2 {
+            position: relative;
+            bottom: 5rem;
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <div class="form">
+            <div class="top1">
+                <img src="./img/icons8-spotify-94.png" alt="">
+                <h2 style="color: rgb(0, 190, 54);">Spotify</h2>
+                <h2 style="color: rgb(0, 190, 54);">Login to continue</h2>
+            </div>
+            <div class="top2">
+                <div class="box2">
+                    <input type="email" required="required">
+                    <span>Email</span>
+                    <i></i>
+                </div>
+                <div class="box2">
+                    <input type="password" required="required">
+                    <span>Password</span>
+                    <i></i>
+                </div>
+                <div class="links">
+                    <a href="#">Reset Password</a>
+                    <a href="./index.html">Signup</a>
+                </div>
+                <input type="submit" value="Login">
+                <h6 style="color: whitesmoke; position:relative; left:12rem; margin-top:2rem;">OR</h3>
+                   <div class="bb">
+                    
+                    <input type="submit" value="Continue with google" style="margin-bottom: 0.5rem;" >
+                    <img src="./img/google.png" alt="" style="padding: 0;margin:0%;position:absolute;height:2rem;width:2rem;top:21rem;left:2rem;">
+                    
+                    <input type="submit" value="Continue with Facebook" style="margin-bottom: 0.5rem;">
+                    <img src="./img/face.png" alt="" style="padding: 0;margin:0%;position:absolute;height:2rem;width:2rem;top:24.6rem;left:2rem;">
+                    
+                    <input type="submit" value="Continue with Apple" style="margin-bottom: 0.5rem;" >
+                    <img src="./img/apple.png" alt="" style="padding: 0;margin:0%;position:absolute;height:2rem;width:2rem;top:28rem;left:2rem;">
+                   </div>   
+                </div>
+        </div>
+    </div>
+</body>
+
+</html>

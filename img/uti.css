@@ -1,0 +1,10 @@
+@import 'uti.css';
+.btn-secondary:hover{
+    background: var(--primary);
+    color: black;
+}
+.btn
+{
+    background: transparent;
+    color:whitesmoke;border:solid whitesmoke; margin-bottom:0.5rem;
+}
